@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, button { width: 100%; margin: 5px 0; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Đăng nhập</h2>
+    <div class="container">
+        <input type="text" id="loginUser" placeholder="Tên đăng nhập">
+        <input type="password" id="loginPass" placeholder="Mật khẩu">
+        <button onclick="login()">Đăng nhập</button>
+    </div>
+    <script>
+        function login() {
+            let user = document.getElementById('loginUser').value;
+            let pass = document.getElementById('loginPass').value;
+            if(localStorage.getItem(user) === pass) {
+                alert('Đăng nhập thành công!');
+            } else {
+                alert('Sai thông tin đăng nhập!');
+            }
+        }
+    </script>
+</body>
+</html>

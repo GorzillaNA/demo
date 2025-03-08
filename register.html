@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, button { width: 100%; margin: 5px 0; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Đăng ký</h2>
+    <div class="container">
+        <input type="text" id="regUser" placeholder="Tên đăng nhập">
+        <input type="password" id="regPass" placeholder="Mật khẩu">
+        <button onclick="register()">Đăng ký</button>
+    </div>
+    <script>
+        function register() {
+            let user = document.getElementById('regUser').value;
+            let pass = document.getElementById('regPass').value;
+            if(user && pass) {
+                localStorage.setItem(user, pass);
+                alert('Đăng ký thành công!');
+            } else {
+                alert('Vui lòng nhập đầy đủ thông tin!');
+            }
+        }
+    </script>
+</body>
+</html>
